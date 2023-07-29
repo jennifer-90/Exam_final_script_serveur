@@ -1,0 +1,188 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* - - - - - TITRES- - - - - - */
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+h2, h3 {
+    display: flex;
+    justify-content: center;
+}
+
+/* - - - - - MENU - - - - - - */
+
+nav {
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 2rem;
+
+        &:hover{
+            background-color: olivedrab;
+            padding: 1rem;
+            color: white;
+        }
+    }
+}
+
+/* - - - - - LISTE DES COURS - - - - - - */
+
+table{
+    border: dotted black 1px;
+    margin: auto;
+    line-height: 1.5rem;
+    width: 60rem;
+
+    th, td{
+        border: dotted black 1px;
+
+        &:hover {
+            background-color: olivedrab;
+            color: white;
+            cursor: pointer;
+        }
+    }
+    th {
+        background-color: rgba(255, 255, 0, 0.28);
+    }
+}
+
+
+
+/* - - - - - ADMIN - - - - - - */
+
+.tableau_admin {
+    border: dotted black 1px;
+    margin: auto;
+    line-height: 1.5rem;
+    width: 60rem;
+
+    th, td {
+        border: dotted black 1px;
+
+        &:hover {
+            background-color: olivedrab;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    th {
+        background-color: rgba(255, 255, 0, 0.28);
+    }
+}
+
+
+.admin_update{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30rem;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    margin-top: 1rem;
+
+    h3{
+        text-align: center;
+    }
+}
+
+/* - - - - - LOGIN & CREATE - - - - - - */
+
+.formu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:#f2f2f2;
+    width: 35rem;
+    height: 35rem;
+    margin: auto;
+
+    input{
+        border-radius: 15px;
+        height: 2rem;
+        width: 20rem;
+        border: hidden;
+        box-shadow: rgba(105, 105, 105, 0.56) 1px 1px 1px 1px;
+
+        &:focus{
+            outline: none;
+            border: none;
+        }
+    }
+
+    button{
+        border-radius: 15px;
+        height: 2rem;
+        width: 20rem;
+        border: hidden;
+        box-shadow: rgba(105, 105, 105, 0.56) 1px 1px 1px 1px;
+
+        a{
+            text-decoration: none;
+        }
+
+        &:hover{
+            background-color: rgba(105, 105, 105, 0.48);
+        }
+    }
+}
+
+input[type='submit']{
+
+    &:hover{
+        background-color: rgba(105, 105, 105, 0.48);
+        cursor: pointer;
+
+    }
+}
+
+/* - - - - - PROFILE -> UPDATE - - - - - - */
+
+.submit_update{
+    font-size: 1.3rem;
+    a {
+        text-decoration: none;
+    }
+    &:hover{
+        background-color: rgba(105, 105, 105, 0.48);
+        cursor: pointer;
+
+    }
+}
+
+/* - - - - - $_SESSION - - - - - - */
+
+.alert-success {
+    background-color: rgba(0, 255, 0, 0.22);
+    height: 5rem;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: rgba(255, 69, 0, 0.29);
+    height: 5rem;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+}
