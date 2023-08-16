@@ -26,7 +26,7 @@ if (!empty($_POST['username']) && filter_var(($_POST['email']), FILTER_VALIDATE_
 
         global $connexion;
 
-        $requete = $connexion->prepare("INSERT INTO user (username, password, email, created ) VALUES (?, ?, ?, NOW() )");
+        $requete = $connexion->prepare("INSERT INTO user (username, password, email, lastlogin, created ) VALUES (?, ?, ?, NOW(), NOW())");
 
         $requete->execute($parametre_requete);
 
