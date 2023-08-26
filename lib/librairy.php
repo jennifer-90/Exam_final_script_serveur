@@ -42,6 +42,7 @@ function admin(int $user_id): bool {
     if ($result == 1) {
         return true;
     }
+    return false;
 }
 
 /*-----------------------------------------------------*/
