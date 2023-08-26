@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_SESSION['user_id'])) {
-    if (menuAdmin($_SESSION['user_id'])) {
+    if (admin($_SESSION['user_id'])) {
 
         ?>
 

@@ -1,53 +1,56 @@
 <?php
 
 
-/**
- * @param string $champs
- * @param string $valuesPost
+/** Tester si le user existe dans la db
+ * @param string $champs Représente le champs de la db
+ * @param string $valuesPost Valeur du formulaire à vérifier dans le champs ciblé
  * @return bool
  */
-function userExist(string $champs, string $valuesPost):bool {
+function userExist(string $champs, string $valuesPost): bool {
 
     $connexion = connexion();
 
-    $sql = "SELECT $champs FROM user WHERE $champs = ?";
+    if (in_array($champs, getColumns('user'))) {
 
-    $query = $connexion->prepare($sql);
-    $query->execute([$valuesPost]);
+        $sql = "SELECT $champs FROM user WHERE $champs = ?";
+        $query = $connexion->prepare($sql);
+        $query->execute([$valuesPost]);
 
-    $result = $query->fetchAll();
+        $result = $query->fetchAll();
 
-    return count($result) > 0;
+        return count($result) > 0;
+    }
+    return false;
 }
 
 
 /*-----------------------------------------------------*/
 
 /**
- * @param $session
+ * @param $user_id
  * @return true|void
  */
-function menuAdmin($session){
+function admin(int $user_id): bool {
 
     $connexion = connexion();
 
     $query = $connexion->prepare("SELECT admin FROM user WHERE id = ?");
-    $query->bindValue(1, $session);
+    $query->bindValue(1, $user_id);
     $query->execute();
     $result = $query->fetchColumn();
 
     if ($result == 1) {
         return true;
     }
-};
+}
 
 /*-----------------------------------------------------*/
 
 /**
-* @param string $field
-* @param string $value
-* @return mixed
-    */
+ * @param string $field
+ * @param string $value
+ * @return mixed
+ */
 function getUser(string $field, string $value): mixed {
 
     if (!in_array($field, getColumns('user'))) {
@@ -82,6 +85,6 @@ function getColumns(string $table): array {
 
 /*-----------------------------------------------------*/
 
-function changeDate(string $date){
-    return date_format(new DateTime($date),'d/m/Y - H\hi -s\s');
+function changeDate(string $date) {
+    return date_format(new DateTime($date), 'd/m/Y - H\hi -s\s');
 }

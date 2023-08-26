@@ -14,7 +14,6 @@ include_once 'page/menu.php';
 
 $connexion = connexion();
 
-
 if (!empty($_SESSION['alert'])) {
     if (!empty($_SESSION['alert-color'])
         && in_array($_SESSION['alert-color'], ['danger', 'info', 'success', 'warning']) // white-list
