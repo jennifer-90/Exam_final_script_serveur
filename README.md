@@ -17,7 +17,7 @@
 dans votre 
 système de gestion de base de données (exemple: MySQL)
 
-&#x2666; Ouvrez le fichier 'config.php' dans un éditeur de code (exemple: VSCode, PhpStorm,...) et configurez les paramètres de connexion à la base de données
+&#x2666; Copier le fichier 'config-dist.php' et renommez le en 'config.php' et ouvrez - le dans un éditeur de code (exemple: VSCode, PhpStorm,...) et configurez les paramètres de connexion à la base de données
 
 ## Configuration de la base de données: 
 
